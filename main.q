@@ -1,21 +1,23 @@
-raw: read0 `$":day-1-inputs.txt";
-directions: raw[;0];
-rotations: "J"$1_/:raw;
-rotations: @[rotations; where directions="L"; neg];
-count_zeros:0;
+r: 0 0;
+do[10; r: r + .Q.ts[{[]
+    raw: first read0 `$":day-2-inputs.txt";
+    ranges: "," vs raw;
+    expandRange:{[r] nums:"J"$"-"vs r;:nums[0] + til(1+nums[1]-nums[0])};
+    flattenedList: raze expandRange each ranges;
+    flattenedList: string each flattenedList;
+    checkIfEqual:{[x]
+        n: count x;
+        h: n div 2;
+        fh: h#x;
+        sh: h _ x;
+        xLong: "J"$x;
+        if[fh~sh; :xLong];
+        :0b
+        };
+    sum checkIfEqual each flattenedList
+    }; enlist[::]]]
 
-position_change:{[curr_pos;rotation]
-    // if[(curr_pos=0) & (rotation > 0) & (rotation <= 99); count_zeros:: count_zeros+1];
-    show "###"
-    show `rotation`curr_pos!(rotation;curr_pos);
-    q: (curr_pos + rotation) div 100;
-    m: (curr_pos + rotation) - (100 * q); 
-    count_zeros :: count_zeros + abs q;
-    show `wraps`next_pos!(abs 1; m);
-    show "###";
-    :m;
-    }
-final_position: 50 position_change/ rotations;
-if[final_position=0;count_zeros: count_zeros+1];
-show final_position;
-show count_zeros;
+timeTakenInSeconds: r[0][0]%1000;
+spaceTakenInMb: r[0][1]%(1024*1024);
+
+show timeTakenInSeconds, spaceTakenInMb;
