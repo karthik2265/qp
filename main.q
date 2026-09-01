@@ -13,17 +13,27 @@ countRollsOfPaperInAdjacentPositions: {[x;y]
     } each adjacentPositions
     }
 
-getAccessCount: {[currentCount;position]
+getAccessCount: {[accessiblePositions;position]
     (x;y):position;
     rollsOfPaperInAdjacentPositions: countRollsOfPaperInAdjacentPositions[x;y];
-    if[rollsOfPaperInAdjacentPositions < 4; currentCount: currentCount+1];
-    :currentCount
+    if[rollsOfPaperInAdjacentPositions < 4; accessiblePositions: accessiblePositions,enlist (x;y)];
+    :accessiblePositions
     }
 
 // take positions of paper rolls
-idxesOfRollsOfPaper: where raze inputs = "@"
+idxesOfRollsOfPaper: where raze inputs = "@";
 positionsOfRollsOfPapers: flip (idxesOfRollsOfPaper div columnsCount; idxesOfRollsOfPaper mod columnsCount);
-show (0 getAccessCount/ positionsOfRollsOfPapers);
-
+accessiblePositions: () getAccessCount/ positionsOfRollsOfPapers;
+// iterate and count
+res:0;
+while[
+    count accessiblePositions > 0; 
+    {[pos] (x;y): pos; inputs[x;y]: "."} each accessiblePositions; 
+    res: res+(count accessiblePositions); 
+    idxesOfRollsOfPaper: where raze inputs = "@";
+    positionsOfRollsOfPapers: flip (idxesOfRollsOfPaper div columnsCount; idxesOfRollsOfPaper mod columnsCount);
+    accessiblePositions: () getAccessCount/ positionsOfRollsOfPapers
+    ];
+show res;
 
 
