@@ -1,0 +1,126 @@
+"###"
+1
+beamIdxes = ,7
+count = 0
+forwardIdxes = ,7
+"###"
+2
+"###"
+beamIdxes = ,7
+count = 0
+forwardIdxes = ,7
+"###"
+3
+"###"
+beamIdxes = ,7
+count = 0
+forwardIdxes = `long$()
+splittersIdxees = ,7
+beamIdxes after update = `s#6 8
+"###"
+4
+"###"
+beamIdxes = `s#6 8
+count = 1
+forwardIdxes = 6 8
+"###"
+5
+"###"
+beamIdxes = `s#6 8
+count = 1
+forwardIdxes = `long$()
+splittersIdxees = 6 8
+beamIdxes after update = `s#5 7 9
+"###"
+6
+"###"
+beamIdxes = `s#5 7 9
+count = 3
+forwardIdxes = 5 7 9
+"###"
+7
+"###"
+beamIdxes = `s#5 7 9
+count = 3
+forwardIdxes = `long$()
+splittersIdxees = 5 7 9
+beamIdxes after update = `s#4 6 8 10
+"###"
+8
+"###"
+beamIdxes = `s#4 6 8 10
+count = 6
+forwardIdxes = 4 6 8 10
+"###"
+9
+"###"
+beamIdxes = `s#4 6 8 10
+count = 6
+forwardIdxes = ,8
+splittersIdxees = 4 6 10
+beamIdxes after update = `s#3 5 7 8 9 11
+"###"
+"###"
+beamIdxes = `s#3 5 7 8 9 11
+count = 10
+forwardIdxes = 3 5 7 8 9 11
+"###"
+"###"
+beamIdxes = `s#3 5 7 8 9 11
+count = 10
+forwardIdxes = 7 8
+splittersIdxees = 3 5 9 11
+beamIdxes after update = `s#2 4 6 7 8 10 12
+"###"
+"###"
+beamIdxes = `s#2 4 6 7 8 10 12
+count = 16
+forwardIdxes = 2 4 6 7 8 10 12
+"###"
+"###"
+beamIdxes = `s#2 4 6 7 8 10 12
+count = 16
+forwardIdxes = 4 7 8 10
+splittersIdxees = 2 6 12
+beamIdxes after update = `s#1 3 4 5 7 8 10 11 13
+"###"
+"###"
+beamIdxes = `s#1 3 4 5 7 8 10 11 13
+count = 23
+forwardIdxes = 1 3 4 5 7 8 10 11 13
+"###"
+"###"
+beamIdxes = `s#1 3 4 5 7 8 10 11 13
+count = 23
+forwardIdxes = 4 8 10 11
+splittersIdxees = 1 3 5 7 9 13
+beamIdxes after update = `s#0 2 4 6 8 10 11 12 14
+"###"
+"###"
+beamIdxes = `s#0 2 4 6 8 10 11 12 14
+count = 32
+forwardIdxes = 0 2 4 6 8 10 11 12 14
+"###"
+32
+`s#0 2 4 6 8 10 11 12 14
+
+
+.......S.......
+.......|.......
+......|^|......
+......|.|......
+.....|^|^|.....
+.....|.|.|.....
+7
+....|^|^|^|....
+....|.|.|.|....
+9
+...|^|^|||^|...
+10
+...|.|.|||.|...
+..|^|^|||^|^|..
+..|.|.|||.|.|..
+.|^|||^||.||^|.
+.|.|||.||.||.|.
+|^|^|^|^|^|||^|
+|.|.|.|.|.|||.|
